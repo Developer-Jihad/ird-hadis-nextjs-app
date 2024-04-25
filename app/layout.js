@@ -14,11 +14,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="grid grid-cols-1 relative">
+        <div className="relative">
           <Header></Header>
           <Navbar></Navbar>
         </div>
-        <div className="mt-[90px] lg:ml-[90px] bg-slate-300 lg:rounded-tl-lg p-3 h-dvh">
+        <div className="mt-[80px] lg:ml-[80px] bg-slate-300 lg:rounded-tl-lg p-3 h-dvh">
           {children}
         </div>
       </body>
