@@ -1,6 +1,6 @@
 # IRD Hadith App with Next.js & Tailwind
 
-<img src=https://ibb.co/cCPCqDp />
+<img src= https://ibb.co/cCPCqDp />
 
 ## Built With
 
