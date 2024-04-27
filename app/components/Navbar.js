@@ -12,7 +12,7 @@ import Link from "next/link";
 const Navbar = () => {
   return (
     <div className="bg-white z-10 h-[80px] fixed bottom-0 w-full lg:left-0 lg:w-[80px] lg:h-full ">
-      <nav className=" flex lg:flex-col lg:h-lvh lg:justify-center justify-evenly items-center gap-5 ">
+      <nav className=" flex lg:flex-col lg:h-lvh lg:justify-center justify-evenly items-center md:gap-5 gap-3 ">
         <Link href={"/"}>
           <Image
             className="p-3 hover:bg-slate-300 rounded-md"
