@@ -2,7 +2,9 @@ import Image from "next/image";
 import React from "react";
 import logo from "../../public/icons/home-logo.png";
 import supportIcon from "../../public/icons/helping-hand.svg";
+// import settingIcon from "../../public/icons/setting-icon.svg";
 import searchIcon from "../../public/icons/search.svg";
+import Button from "./Button";
 
 const Header = () => {
   return (
@@ -41,26 +43,25 @@ const Header = () => {
           </button>
         </div>
 
-        <div className=" px-1 2xl:py-1 bg-green-500 text-white rounded-md mr-4">
-          <button className=" hidden px-3  justify-center items-center gap-2 2xl:block 2xl:flex">
+        <div className=" bg-green-500 text-white rounded-md mr-4">
+          <button className=" hidden px-3 py-1  justify-center items-center gap-2 2xl:block 2xl:flex">
             সাপোর্ট করুন
             <Image
-              className="m-1"
               src={supportIcon}
               alt="support-icon"
               width={30}
               height={30}
             />
           </button>
-          <button className="2xl:hidden">
+          <Button></Button>
+          {/* <button className="pt-2 px-2 2xl:hidden">
             <Image
-              className="m-1"
-              src={supportIcon}
-              alt="support-icon"
-              width={30}
-              height={30}
+              src={settingIcon}
+              alt="setting-icon"
+              width={27}
+              height={27}
             />
-          </button>
+          </button> */}
         </div>
       </div>
     </header>
