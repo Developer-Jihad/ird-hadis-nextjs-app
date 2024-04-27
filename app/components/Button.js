@@ -4,7 +4,6 @@ import Image from "next/image";
 import settingIcon from "../../public/icons/setting-icon.svg";
 import closeIcon from "@/public/icons/close-icon.png";
 import { useState } from "react";
-import Settingsbar from "./Settingsbar";
 
 const Button = () => {
   const [isOpen, setIsOpen] = useState(false);
