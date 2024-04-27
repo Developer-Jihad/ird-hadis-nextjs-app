@@ -84,7 +84,7 @@ const HadithSection = async ({ section, hadith, books, chapter }) => {
                       <br />
                       <p>
                         হাদিসের মান :{" "}
-                        <span className="p-2 bg-green-500 text-white rounded-md">
+                        <span className="py-1 px-2 bg-green-500 text-white rounded-md">
                           {item.grade}
                         </span>
                       </p>
