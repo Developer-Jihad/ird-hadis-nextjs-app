@@ -2,6 +2,11 @@ import Image from "next/image";
 import bookIcon from "@/public/icons/book (3).svg";
 import flowerIcon from "@/public/icons/flower-icon.svg";
 import mainBook from "@/public/icons/main-book.svg";
+import copyIcon from "@/public/icons/copy.svg";
+import bookmarkIcon from "@/public/icons/bookmark (1).svg";
+import shareIcon from "@/public/icons/share.svg";
+import directIcon from "@/public/icons/direct.svg";
+import reportIcon from "@/public/icons/report.svg";
 
 const HadithSection = async ({ section, hadith, books, chapter }) => {
   const booksData = await books;
@@ -82,12 +87,46 @@ const HadithSection = async ({ section, hadith, books, chapter }) => {
                       <br />
                       <p>{item.bn}</p>
                       <br />
-                      <p>
-                        হাদিসের মান :{" "}
-                        <span className="py-1 px-2 bg-green-500 text-white rounded-md">
-                          {item.grade}
-                        </span>
-                      </p>
+                      <div className="md:flex justify-between">
+                        <p>
+                          হাদিসের মান :{"  "}
+                          <span className="py-1 px-2 ml-2 bg-green-500 text-white rounded-md">
+                            {item.grade}
+                          </span>
+                        </p>
+                        <div className="flex justify-evenly mt-5 md:mt-0 md:gap-16 lg:gap-20">
+                          <Image
+                            src={copyIcon}
+                            alt="copy Icon"
+                            width={25}
+                            height={25}
+                          />
+                          <Image
+                            src={bookmarkIcon}
+                            alt="Bookmark Icon"
+                            width={25}
+                            height={25}
+                          />
+                          <Image
+                            src={shareIcon}
+                            alt="share Icon"
+                            width={25}
+                            height={25}
+                          />
+                          <Image
+                            src={reportIcon}
+                            alt="report Icon"
+                            width={25}
+                            height={25}
+                          />
+                          <Image
+                            src={directIcon}
+                            alt="direct Icon"
+                            width={25}
+                            height={25}
+                          />
+                        </div>
+                      </div>
                     </div>
                   ))}
               </div>
