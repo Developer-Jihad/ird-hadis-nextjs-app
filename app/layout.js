@@ -1,9 +1,13 @@
-import { Inter } from "next/font/google";
+import { Noto_Serif_Bengali } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 
-const inter = Inter({ subsets: ["latin"] });
+const bengali = Noto_Serif_Bengali({
+  subsets: ["latin"],
+  display: "swap",
+  weight: "400",
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -13,14 +17,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={bengali.className}>
         <div className="relative">
           <Header></Header>
           <Navbar></Navbar>
         </div>
-        <div className="mt-[80px] lg:ml-[80px] bg-slate-300 lg:rounded-tl-lg p-3 h-dvh">
-          {children}
-        </div>
+        <div>{children}</div>
       </body>
     </html>
   );

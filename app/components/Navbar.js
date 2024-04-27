@@ -11,7 +11,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <div className="bg-gray-100 h-[80px] fixed bottom-0 w-full lg:left-0 lg:w-[80px] lg:h-full ">
+    <div className="bg-white z-10 h-[80px] fixed bottom-0 w-full lg:left-0 lg:w-[80px] lg:h-full ">
       <nav className=" flex lg:flex-col lg:h-lvh lg:justify-center justify-evenly items-center gap-5 ">
         <Link href={"/"}>
           <Image
