@@ -11,7 +11,7 @@ const Sectionbar = ({ books, chapter }) => {
 
   return (
     <div className=" xl:col-span-3 2xl:col-span-2 hidden xl:block ">
-      <div className="bg-white rounded-md h-[90%]">
+      <div className="bg-white rounded-md h-[87%]">
         <div className="flex justify-evenly text-center items-center">
           <button
             className={`${

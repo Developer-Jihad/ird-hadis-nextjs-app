@@ -10,14 +10,14 @@ const HadithSection = async ({ section, hadith, books, chapter }) => {
   const hadithData = await hadith;
 
   return (
-    <div className=" xl:col-span-9 2xl:col-span-8 rounded-md overflow-y-auto scrollbar mb-[80px]">
+    <div className=" xl:col-span-9 2xl:col-span-8 rounded-md overflow-y-auto  mb-[50px] scrollbar">
       {booksData.map((book) => (
         <div
           className="flex items-center bg-white px-3 py-4 rounded-md mb-3"
           key={book.id}
         >
           <Image
-            className="pr-3 hover:bg-slate-300 rounded-md"
+            className="pr-3 rounded-md"
             src={mainBook}
             alt="book Icon"
             width={60}
@@ -47,7 +47,7 @@ const HadithSection = async ({ section, hadith, books, chapter }) => {
                 <div className="bg-white px-3 py-5 rounded-md my-3">
                   <div className="flex items-center font-bold mb-3">
                     <Image
-                      className="pr-3 hover:bg-slate-300 rounded-md"
+                      className="pr-3 rounded-md"
                       src={bookIcon}
                       alt="book Icon"
                       width={50}
@@ -67,7 +67,7 @@ const HadithSection = async ({ section, hadith, books, chapter }) => {
                     >
                       <div className="flex mt-2 text-green-500">
                         <Image
-                          className="pr-3 hover:bg-slate-300 rounded-md "
+                          className="pr-3 rounded-md "
                           src={flowerIcon}
                           alt="book Icon"
                           width={35}
