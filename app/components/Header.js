@@ -47,9 +47,10 @@ const Header = () => {
         </div>
 
         <div className=" bg-primary text-white rounded-md">
-          <button className=" hidden px-3 py-1 justify-center items-center gap-2 2xl:block 2xl:flex">
+          <button className=" hidden px-3 py-1 2xl:block">
             সাপোর্ট করুন
             <Image
+              className="inline ml-2"
               src={supportIcon}
               alt="support-icon"
               width={30}

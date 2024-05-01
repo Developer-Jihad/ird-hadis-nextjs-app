@@ -20,19 +20,19 @@ const HadithSection = async ({ section, hadith, books, chapter }) => {
     <div className=" xl:col-span-9 2xl:col-span-8 rounded-md overflow-y-auto  mb-[50px] scrollbar">
       {booksData.map((book) => (
         <div className=" bg-white p-4 rounded-md mb-3" key={book.id}>
-          <div className="flex">
+          <div className=" hidden xl:block ">
             <Image
-              className="hidden xl:block pr-2"
+              className="hidden xl:inline-block  pr-2"
               src={smallbookIcon}
               alt="book Icon"
               width={25}
               height={25}
             />
-            <p>
+            <span>
               / {book.book_name} / {book.id}
-            </p>
+            </span>
           </div>
-          <hr className="my-3 text-secondary" />
+          <hr className="my-3  hidden xl:block text-secondary" />
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <Image
@@ -57,7 +57,9 @@ const HadithSection = async ({ section, hadith, books, chapter }) => {
                 </p>
               </div>
             </div>
-            <p className="text-2xl font-bold">{book.title_ar}</p>
+            <p className="text-2xl hidden xl:block font-bold">
+              {book.title_ar}
+            </p>
           </div>
         </div>
       ))}
