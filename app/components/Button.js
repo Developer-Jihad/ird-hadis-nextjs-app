@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import settingIcon from "../../public/icons/setting-icon.svg";
-import closeIcon from "@/public/icons/close-icon.png";
+import closeIcon from "@/public/icons/close-icon.svg";
 import { useState } from "react";
 
 const Button = () => {
@@ -14,16 +14,16 @@ const Button = () => {
   return (
     <div>
       <button onClick={handleAppDrawer} className="pt-2 px-2 2xl:hidden">
-        <Image src={settingIcon} alt="setting-icon" width={27} height={27} />
+        <Image src={settingIcon} alt="setting-icon" width={20} height={20} />
       </button>
 
       <div
-        className={`fixed top-0 right-0 w-[350px] h-full bg-gray-800 bg-opacity-70 z-50 transition-all duration-300 ease-in-out ${
+        className={`fixed top-0 right-0 w-full bg-black bg-opacity-70 h-full z-50 transition-all duration-300 ease-in-out ${
           isOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"
         }`}
       >
-        <div className="w-full px-4 py-6 h-full overflow-auto">
-          <div className="flex items-center justify-between mb-4 mx-1">
+        <div className="w-[350px] fixed top-0 right-0  drop-shadow-lg bg-white p-6 h-full overflow-auto">
+          <div className="flex items-center text-black justify-between mb-4 mx-1">
             <h1 className="text-2xl ">সেটিংস</h1>
 
             <button onClick={handleAppDrawer}>
@@ -32,11 +32,11 @@ const Button = () => {
           </div>
 
           <div>
-            <div className="bg-white p-7 rounded-md text-black">
+            <div className="bg-white my-7 rounded-md text-black font-bold">
               <form>
                 <label htmlFor="fontStyle">আরবি ফন্ট সিলেক্ট করুন</label>
                 <select
-                  className="block w-full my-3 bg-gray-200 px-3 appearance-none h-9 rounded-md"
+                  className="block w-full my-3 border-[2px] border-secondary px-3 appearance-none h-9 rounded-md"
                   name="fontStyle"
                   id="fontStyle"
                 >
@@ -45,7 +45,7 @@ const Button = () => {
                 <br />
                 <label htmlFor="vol">এরাবিক ফন্ট সাইজ</label>
                 <input
-                  className="block w-full my-3 bg-green-500 appearance-none h-2 rounded-lg"
+                  className="block w-full my-3 bg-primary appearance-none h-2 rounded-lg"
                   type="range"
                   id="vol"
                   name="vol"
@@ -55,7 +55,7 @@ const Button = () => {
                 <br />
                 <label htmlFor="vol">অনুবাদ ফন্ট সাইজ</label>
                 <input
-                  className="block w-full my-3 bg-green-500 appearance-none h-2 rounded-lg"
+                  className="block w-full my-3 bg-primary appearance-none h-2 rounded-lg"
                   type="range"
                   id="vol"
                   name="vol"
@@ -66,7 +66,7 @@ const Button = () => {
                 <p>নাইট মোড</p>
               </form>
             </div>
-            <div className=" p-7 rounded-md mt-3 text-white bg-green-500">
+            <div className=" p-7 rounded-md mt-3 text-white bg-primary">
               <h1 className="text-2xl text-center">
                 আপনিও সদাকায়ে জারিয়াতে অংশ নিন
               </h1>
@@ -77,7 +77,7 @@ const Button = () => {
                 হিসেবে আল্লাহ্‌র কাছে কবুল হবে।
               </p>
               <div className="text-center">
-                <button className="bg-white rounded-md py-2 px-5 text-green-600">
+                <button className="bg-white rounded-md py-2 px-5 text-primary">
                   সাপোর্ট করুন
                 </button>
               </div>

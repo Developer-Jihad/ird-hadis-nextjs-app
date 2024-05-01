@@ -1,12 +1,11 @@
-import { Noto_Serif_Bengali } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 
-const bengali = Noto_Serif_Bengali({
-  subsets: ["latin"],
+const myFont = localFont({
+  src: "../public/fonts/kalpurush.ttf",
   display: "swap",
-  weight: "400",
 });
 
 export const metadata = {
@@ -17,7 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={bengali.className}>
+      <body className={myFont.className}>
         <div className="relative">
           <Header></Header>
           <Navbar></Navbar>

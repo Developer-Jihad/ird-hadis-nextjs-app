@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+import polygon from "@/public/icons/polygon.svg";
+
 const Sectionbar = ({ books, chapter }) => {
   const [activeButton, setActiveButton] = useState("book");
   // console.log(books);
@@ -16,7 +18,7 @@ const Sectionbar = ({ books, chapter }) => {
           <button
             className={`${
               activeButton == "book"
-                ? "bg-green-500 text-white"
+                ? "bg-primary text-white"
                 : "bg-white text-black"
             } w-1/2 py-3 rounded-tl-lg font-bold`}
             onClick={() => handleClick("book")}
@@ -27,7 +29,7 @@ const Sectionbar = ({ books, chapter }) => {
           <button
             className={`${
               activeButton == "chapter"
-                ? "bg-green-500 text-white"
+                ? "bg-primary text-white"
                 : "bg-white text-black"
             } w-1/2 py-3 rounded-tr-lg font-bold`}
             onClick={() => handleClick("chapter")}
@@ -35,19 +37,31 @@ const Sectionbar = ({ books, chapter }) => {
             অধ্যায়
           </button>
         </div>
-        <hr />
+        <hr className="text-secondary" />
         <br />
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Search for filter"
+          className="w-[92%] mx-3 bg-primaryBg rounded px-5 py-2"
+          disabled
+        />
+
         <div className="m-3">
           {activeButton === "book" && (
             <div>
               {books.map((book) => (
                 <div
-                  className="flex items-center bg-green-100 px-2 py-3 rounded-md"
+                  className=" flex items-center bg-secondaryBg px-2 py-3 rounded-md"
                   key={book.id}
                 >
-                  <h1 className="hover:bg-slate-300 mr-2 py-1 font-bold px-3 rounded-md text-2xl">
+                  <div
+                    className=" mr-2 py-1 bg-no-repeat text-white font-bold p-3 rounded-md text-2xl"
+                    style={{ backgroundImage: `url(${polygon.src})` }}
+                  >
                     B
-                  </h1>
+                  </div>
 
                   <div>
                     <h2 className="font-bold">{book.title}</h2>
@@ -62,12 +76,15 @@ const Sectionbar = ({ books, chapter }) => {
             <div>
               {chapter.map((chapter) => (
                 <div
-                  className="flex items-center bg-green-100 px-2 py-3 rounded-md"
+                  className="flex items-center bg-secondaryBg px-2 py-3 rounded-md"
                   key={chapter.id}
                 >
-                  <h1 className="hover:bg-slate-300 mr-2 py-1 font-bold px-3 rounded-md text-2xl">
+                  <div
+                    className=" mr-2 bg-no-repeat py-1 text-white font-bold p-3 rounded-md text-2xl"
+                    style={{ backgroundImage: `url(${polygon.src})` }}
+                  >
                     {chapter.id}
-                  </h1>
+                  </div>
                   <div>
                     <h2 className="font-bold">{chapter.title}</h2>
                     <p>হদিসের রেন্জ - {chapter.hadis_range}</p>
