@@ -14,7 +14,7 @@ const Sectionbar = ({ books, chapter }) => {
 
   return (
     <div className=" xl:col-span-3 2xl:col-span-2 hidden xl:block ">
-      <div className="bg-white rounded-2xl h-[87%]">
+      <div className="bg-white rounded-2xl h-[89%]">
         <div className="flex justify-evenly text-center items-center">
           <button
             className={`${
@@ -49,7 +49,7 @@ const Sectionbar = ({ books, chapter }) => {
             height={20}
           />
           <input
-            className="w-[150px]"
+            className="w-[130px]"
             type="text"
             id="name"
             name="name"
@@ -74,8 +74,10 @@ const Sectionbar = ({ books, chapter }) => {
                   </div>
 
                   <div>
-                    <h2 className="font-bold">{book.title}</h2>
-                    <p>সর্বমোট হাদিস - {book.number_of_hadis}</p>
+                    <h2 className="text-lg">{book.title}</h2>
+                    <p className="text-gray">
+                      সর্বমোট হাদিস - {book.number_of_hadis}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -96,8 +98,10 @@ const Sectionbar = ({ books, chapter }) => {
                     {chapter.id}
                   </div>
                   <div>
-                    <h2 className="font-bold">{chapter.title}</h2>
-                    <p>হদিসের রেন্জ - {chapter.hadis_range}</p>
+                    <h2 className="text-lg">{chapter.title}</h2>
+                    <p className="text-gray">
+                      হদিসের রেন্জ - {chapter.hadis_range}
+                    </p>
                   </div>
                 </div>
               ))}

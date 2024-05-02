@@ -35,10 +35,11 @@ const Header = () => {
               height={20}
             />
             <input
+              className="bg-white"
               type="text"
               id="name"
               name="name"
-              placeholder="Search hadith"
+              placeholder="Search Hadith"
               disabled
             />
           </div>
