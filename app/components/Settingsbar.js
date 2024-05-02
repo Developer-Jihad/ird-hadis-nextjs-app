@@ -2,7 +2,7 @@ import React from "react";
 
 const Settingsbar = () => {
   return (
-    <div className="  hidden 2xl:block 2xl:col-span-2 ">
+    <div className="  hidden 2xl:block 2xl:col-span-2 overflow-y-auto scrollbar mb-[65px]">
       <div className="bg-white p-7 rounded-md">
         <h1 className="text-2xl text-center mb-6">সেটিংস</h1>
         <form>

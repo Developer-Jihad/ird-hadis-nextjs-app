@@ -14,7 +14,7 @@ export default async function Home() {
   // console.log(chapter);
 
   return (
-    <main className="xl:grid xl:grid-cols-12 xl:gap-3 mt-[64px] lg:mt-[80px] lg:ml-[80px] p-3 xl:h-dvh xl:fixed bg-primaryBg lg:rounded-tl-lg">
+    <main className="xl:grid xl:grid-cols-12 xl:gap-3 mt-[64px] lg:mt-[80px] lg:ml-[80px] p-3 lg:p-5 xl:h-dvh xl:fixed bg-primaryBg lg:rounded-tl-3xl">
       <Sectionbar books={books} chapter={chapter}></Sectionbar>
       <HadithSection
         section={section}

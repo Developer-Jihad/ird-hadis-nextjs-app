@@ -1,8 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
-
-import polygon from "@/public/icons/polygon.svg";
+import searchIcon from "@/public/icons/search.svg";
+import hexagon from "@/public/icons/hexagon.png";
 
 const Sectionbar = ({ books, chapter }) => {
   const [activeButton, setActiveButton] = useState("book");
@@ -13,14 +14,14 @@ const Sectionbar = ({ books, chapter }) => {
 
   return (
     <div className=" xl:col-span-3 2xl:col-span-2 hidden xl:block ">
-      <div className="bg-white rounded-md h-[87%]">
+      <div className="bg-white rounded-2xl h-[87%]">
         <div className="flex justify-evenly text-center items-center">
           <button
             className={`${
               activeButton == "book"
                 ? "bg-primary text-white"
                 : "bg-white text-black"
-            } w-1/2 py-3 rounded-tl-lg font-bold`}
+            } w-1/2 py-3 rounded-tl-2xl text-xl font-bold`}
             onClick={() => handleClick("book")}
           >
             বই
@@ -31,34 +32,43 @@ const Sectionbar = ({ books, chapter }) => {
               activeButton == "chapter"
                 ? "bg-primary text-white"
                 : "bg-white text-black"
-            } w-1/2 py-3 rounded-tr-lg font-bold`}
+            } w-1/2 py-3 rounded-tr-2xl text-xl font-bold`}
             onClick={() => handleClick("chapter")}
           >
             অধ্যায়
           </button>
         </div>
         <hr className="text-secondary" />
-        <br />
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Search for filter"
-          className="w-[92%] mx-3 bg-primaryBg rounded px-5 py-2"
-          disabled
-        />
+
+        <div className="w-[92%] mx-3 mt-3 bg-primaryBg rounded-lg px-5 py-3">
+          <Image
+            className="mr-3 inline-block"
+            src={searchIcon}
+            alt="search-icon"
+            width={20}
+            height={20}
+          />
+          <input
+            className="w-[150px]"
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Search For Filter"
+            disabled
+          />
+        </div>
 
         <div className="m-3">
           {activeButton === "book" && (
             <div>
               {books.map((book) => (
                 <div
-                  className=" flex items-center bg-secondaryBg px-2 py-3 rounded-md"
+                  className=" flex items-center bg-secondaryBg px-2 py-3 rounded-lg"
                   key={book.id}
                 >
                   <div
-                    className=" mr-2 py-1 bg-no-repeat text-white font-bold p-3 rounded-md text-2xl"
-                    style={{ backgroundImage: `url(${polygon.src})` }}
+                    className=" mr-2 px-4 py-2 bg-contain bg-no-repeat text-white font-bold rounded--2xl text-2xl"
+                    style={{ backgroundImage: `url(${hexagon.src})` }}
                   >
                     B
                   </div>
@@ -76,12 +86,12 @@ const Sectionbar = ({ books, chapter }) => {
             <div>
               {chapter.map((chapter) => (
                 <div
-                  className="flex items-center bg-secondaryBg px-2 py-3 rounded-md"
+                  className="flex items-center bg-secondaryBg px-2 py-3 rounded-2xl"
                   key={chapter.id}
                 >
                   <div
-                    className=" mr-2 bg-no-repeat py-1 text-white font-bold p-3 rounded-md text-2xl"
-                    style={{ backgroundImage: `url(${polygon.src})` }}
+                    className=" mr-2 bg-no-repeat bg-contain text-white font-bold px-4 py-2 rounded-2xl text-2xl"
+                    style={{ backgroundImage: `url(${hexagon.src})` }}
                   >
                     {chapter.id}
                   </div>

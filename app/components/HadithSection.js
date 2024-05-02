@@ -1,7 +1,7 @@
 import Image from "next/image";
 import bookIcon from "@/public/icons/book (3).svg";
 import flowerIcon from "@/public/icons/flower-icon.svg";
-import mainBook from "@/public/icons/main-book.svg";
+import booksIcon from "@/public/icons/books.png";
 import copyIcon from "@/public/icons/copy.svg";
 import bookmarkIcon from "@/public/icons/bookmark (1).svg";
 import shareIcon from "@/public/icons/share.svg";
@@ -17,10 +17,10 @@ const HadithSection = async ({ section, hadith, books, chapter }) => {
   const hadithData = await hadith;
 
   return (
-    <div className=" xl:col-span-9 2xl:col-span-8 rounded-md overflow-y-auto  mb-[50px] scrollbar">
+    <div className=" xl:col-span-9 2xl:col-span-8 rounded-2xl overflow-y-auto xl:pl-3 2xl:pr-2 mb-[50px] scrollbar">
       {booksData.map((book) => (
-        <div className=" bg-white p-4 rounded-md mb-3" key={book.id}>
-          <div className=" hidden xl:block ">
+        <div className=" bg-white p-4 rounded-2xl mb-4" key={book.id}>
+          <div className=" hidden xl:block text-gray">
             <Image
               className="hidden xl:inline-block  pr-2"
               src={smallbookIcon}
@@ -36,15 +36,15 @@ const HadithSection = async ({ section, hadith, books, chapter }) => {
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <Image
-                className="hidden xl:block pr-3 rounded-md"
-                src={mainBook}
+                className="hidden xl:block pr-3"
+                src={booksIcon}
                 alt="book Icon"
                 width={50}
                 height={50}
               />
 
               <Image
-                className="xl:hidden pr-3 rounded-md"
+                className="xl:hidden pr-3"
                 src={hamBargerIcon}
                 alt="book Icon"
                 width={35}
@@ -57,16 +57,14 @@ const HadithSection = async ({ section, hadith, books, chapter }) => {
                 </p>
               </div>
             </div>
-            <p className="text-2xl hidden xl:block font-bold">
-              {book.title_ar}
-            </p>
+            <p className="text-2xl hidden xl:block">{book.title_ar}</p>
           </div>
         </div>
       ))}
 
       {chapterData.map((singelChapter) => (
         <div key={singelChapter.id}>
-          <div className="flex items-center bg-white p-4 rounded-md my-3">
+          <div className="flex items-center bg-white p-4 rounded-2xl my-4">
             <h1 className="bg-primary text-white mr-3 px-3 py-1 rounded-md">
               {singelChapter.id}
             </h1>
@@ -78,10 +76,10 @@ const HadithSection = async ({ section, hadith, books, chapter }) => {
             .filter((item) => item.chapter_id === singelChapter.id)
             .map((section) => (
               <div key={section.id}>
-                <div className="bg-white p-4 rounded-md my-3">
+                <div className="bg-white p-4 text-lg rounded-2xl my-4">
                   <div className="flex items-center font-bold mb-3">
                     <Image
-                      className="pr-3 rounded-md"
+                      className="pr-3"
                       src={bookIcon}
                       alt="book Icon"
                       width={45}
@@ -95,11 +93,14 @@ const HadithSection = async ({ section, hadith, books, chapter }) => {
                 {hadithData
                   .filter((item) => item.section_id === section.id)
                   .map((item) => (
-                    <div key={item.id} className="bg-white p-4 rounded-md my-3">
+                    <div
+                      key={item.id}
+                      className="bg-white p-4 text-lg rounded-2xl my-4"
+                    >
                       <div className="flex items-center justify-between">
                         <div className="flex mt-2 text-primary">
                           <Image
-                            className="pr-3 rounded-md "
+                            className="pr-3"
                             src={flowerIcon}
                             alt="book Icon"
                             width={35}
@@ -107,12 +108,12 @@ const HadithSection = async ({ section, hadith, books, chapter }) => {
                           />
                           <p className="text-xl">{item.hadith_id}</p>
                         </div>
-                        <p className="lg:hidden py-1 px-3 bg-primary text-white rounded-md">
+                        <p className="lg:hidden py-1 px-3 bg-primary text-white rounded-2xl">
                           {item.grade}
                         </p>
                       </div>
                       <br />
-                      <p>{item.ar}</p>
+                      <p className="text-xl leading-10">{item.ar}</p>
                       <br />
                       <p className="text-primary">{item.narrator}</p>
                       <br />
@@ -121,7 +122,7 @@ const HadithSection = async ({ section, hadith, books, chapter }) => {
                       <div className="md:flex justify-between">
                         <p className="hidden lg:block">
                           হাদিসের মান :{"  "}
-                          <span className="py-1 px-2 ml-2 bg-primary text-white rounded-md">
+                          <span className="py-1 px-2 ml-2 bg-primary text-white rounded-2xl">
                             {item.grade}
                           </span>
                         </p>
